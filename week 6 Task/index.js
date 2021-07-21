@@ -92,7 +92,7 @@ app.put('/packagelist/:id', (req, res) =>{
  
 
 
-app.delete('/packagelist/:id',(req,res) =>{
+app.delete('/packageList/:id',(req,res) =>{
     let packagelistId = Number(req.params.id);
     let deletePackagelist = packagelist.filter((packagelist) => packagelist.id !== packagelistId);
     if(!deletePackagelist){
@@ -102,6 +102,24 @@ app.delete('/packagelist/:id',(req,res) =>{
         res.json(packagelist);
     }
 })
+app.delete('/products/:id',(req,res) =>{
 
+    let productId = Number(req.params.id);
+
+    let deleteProduct = products.filter((product) => product.id !== productId);
+
+    if(!deleteProduct){
+
+        res.status(404).send(`Product with id of ${productId} not found`);
+
+    }else{
+
+        products = deleteProduct;
+
+        res.json(products);
+
+    }
+
+})
 
 app.listen(3000, () => console.log('Example app is listening on port 3000.'));
