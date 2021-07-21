@@ -1,4 +1,4 @@
-const package = [
+let package = [
     {
         id: 1,
         name: "HP 15 Laptop",
