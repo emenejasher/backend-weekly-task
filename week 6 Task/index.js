@@ -1,8 +1,8 @@
 const express = require('express');
-let packages = require('./package/package.js');
+let packageList = require('./package/package.js');
 const app = express();
 
-const packagelist = require('./package/package.js');
+
 
 app.use(express.json());
 
@@ -10,12 +10,12 @@ app.get('/', (req, res) =>{
     res.send('Successful response.');
 });
 
-app.get('/packagelist',(req, res)=>{
-    res.json(packagelist).status(201);
+app.get('/packageList',(req, res)=>{
+    res.json(packageList).status(201);
    
 });
 
-app.post('/packagelist/add',(req, res) =>{
+app.post('/packageList/add',(req, res) =>{
     if(!req.body.name || !req.body.description || !req.body.image || !req.body.price){
         res.status(400).send('u try')
     }else{
