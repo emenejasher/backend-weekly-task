@@ -18,6 +18,24 @@ app.get('/packageList',(req, res)=>{
    
 });
 
+app.get('/packageList/:id', (req, res) =>{
+
+    let packageListId = Number(req.params.id);
+
+    let getPackageList = packageList.find((packageList) => packageList.id === packageListId);
+
+    if(!getPackageList){
+
+        res.status(404).send(`Cannot find product with id of ${productId}`);
+
+    }else {
+
+        res.json(getProduct);
+
+    }
+
+});
+
 app.post('/packageList/add',(req, res) =>{
     if(!req.body.name || !req.body.description || !req.body.image || !req.body.price){
         res.status(400).send('u try')
