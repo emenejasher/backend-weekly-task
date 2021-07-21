@@ -26,11 +26,11 @@ app.get('/packageList/:id', (req, res) =>{
 
     if(!getPackageList){
 
-        res.status(404).send(`Cannot find product with id of ${productId}`);
+        res.status(404).send(`Cannot find packageList with id of ${packageListId}`);
 
     }else {
 
-        res.json(getProduct);
+        res.json(getPackageList);
 
     }
 
