@@ -40,15 +40,15 @@ app.post('/packageList/add',(req, res) =>{
     if(!req.body.name || !req.body.description || !req.body.image || !req.body.price){
         res.status(400).send('u try')
     }else{
-        let newpackagelist ={
-            id: packagelist.length + 1,
+        let newpackageList ={
+            id: packageList.length + 1,
             name: req.body.name,
             description: req.body.description,
             image: req.body.image,
             price: req.body.price,
         }
-        packagelist.push(newpackagelist);
-        res.json(packagelist);
+        packageList.push(newpackageList);
+        res.json(packageList);
     }
 
 });
