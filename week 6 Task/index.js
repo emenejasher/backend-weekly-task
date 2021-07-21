@@ -54,18 +54,43 @@ app.post('/packageList/add',(req, res) =>{
 });
 
 app.put('/packagelist/:id', (req, res) =>{
-    let packagelistId = Number(req.params.id);
+    let packageListId = Number(req.params.id);
     let body = req.body;
-    let packagelist = packagelist.find((packagelist) => packagelist.id === packagelistId);
-    let indexOfPackagelist = packagelist.indexOf(packagelist);
-    if(!packagelist){
-        res.status(404).send(`Packagelist with id of ${packagelistId} not found`)
+    let packageList = packageList.find((packageList) => packageList.id === packageListId);
+    let indexOfPackageList = packageList.indexOf(packageList);
+    if(!packageList){
+        res.status(404).send(`PackageList with id of ${packageListId} not found`)
     }else{
-        let updatePackagelist = {...packagelist, ...body};
-        packagelist[indexOfPackagelist] = updatePackagelist;
-        res.json(updatePackagelist)
+        let updatePackageList = {...packageList, ...body};
+        packageList[indexOfPackageList] = updatePackageList;
+        res.json(updatePackageList)
     }
 })
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+ 
+
 
 app.delete('/packagelist/:id',(req,res) =>{
     let packagelistId = Number(req.params.id);
