@@ -70,4 +70,4 @@ let package = [
         price: "#156,970"
     }];
     
-    module.exports = package ;
+    module.exports = package 
