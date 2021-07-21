@@ -1,5 +1,5 @@
 const express = require('express');
-const package = require('./package/package.js');
+let packages = require('./package/package.js');
 const app = express();
 
 const packagelist = require('./package/package.js');
